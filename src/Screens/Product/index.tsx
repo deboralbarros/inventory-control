@@ -7,15 +7,12 @@ import { getProducts } from '../../Services/Products';
 
 const Product = () => {
     const [products, setProducts] = useState<ProductModel[]>([]);
-    const [loading, setLoading] = useState<Boolean>(false);
 
     useEffect(() => {
         (async () => {
-            setLoading(true);
             const data = await getProducts();
 
             setProducts(data);
-            setLoading(false);
         })();
     }, []);
 

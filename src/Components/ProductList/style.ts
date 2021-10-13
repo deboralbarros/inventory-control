@@ -23,6 +23,7 @@ export const Head = styled.div`
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    align-content: center;
     font-weight: 500;
     color: #fff;
     background: rgba(0, 0, 0, 0.75);
@@ -34,4 +35,5 @@ export const HeadItem = styled.p`
     font-size: 1rem;
     width: 135%;
     text-align: center;
+    margin: 0;
 `;

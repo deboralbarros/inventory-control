@@ -20,8 +20,8 @@ const ProductList = ({ products }: ProductListProps) => {
                 <div style={{ width: 700 }}></div>
             </Head>
 
-            {products.map(product => (
-                <ProductItem item={product} />
+            {products.map((product, key) => (
+                <ProductItem key={key} item={product} />
             ))}
         </Container>
     )
