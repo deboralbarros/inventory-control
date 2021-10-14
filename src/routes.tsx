@@ -5,7 +5,7 @@ import Movement from './Screens/Movement';
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/" component={Product} />
+            <Route path="/" component={Product} exact />
             <Route path="/movements" component={Movement} />
         </Switch>
     );

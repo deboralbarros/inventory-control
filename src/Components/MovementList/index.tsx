@@ -1,38 +1,40 @@
 import { useState } from 'react';
 import { AddProductButton, Container, Head, HeadItem, InputContainer, InputLabel, Title, Input } from './styles';
-import { Product } from '../../Models/Product';
+import { Movement } from '../../Models/Movement';
 import { addProduct } from '../../Services/Products';
 import { Modal } from 'antd';
 import ProductItem from '../ProductItem';
+import MovementItem from '../MovementItem';
 
-interface ProductListProps {
-    products: Product[]
+interface MovementListProps {
+    movements: Movement[]
 }
 
-const ProductList = ({ products }: ProductListProps) => {
+const MovementList = ({ movements }: MovementListProps) => {
     const [modalVisible, setModalVisible] = useState<boolean>(false);
-    const [product, setProduct] = useState<Product>({});
+    // const [movement, setMovement] = useState<Movement>({});
 
     const submit = async () => {
-        await addProduct(product);
+        // await addProduct(movement);
         setModalVisible(false);
     }
 
     return (
         <Container>
-            <Title>Produtos</Title>
+            <Title>Movimentações</Title>
 
             <Head>
-                <HeadItem>Código</HeadItem> 
-                <HeadItem>Descrição</HeadItem> 
+                <HeadItem>ID</HeadItem> 
+                <HeadItem>Produto</HeadItem> 
                 <HeadItem>Tipo</HeadItem> 
-                <HeadItem>Preço do Fornecedor</HeadItem> 
-                <HeadItem>Quantidade em Estoque</HeadItem>
-                <div style={{ width: 700 }}></div>
+                <HeadItem>Valor de Venda</HeadItem> 
+                <HeadItem>Data da Venda</HeadItem>
+                <HeadItem>Quantidade</HeadItem>
+                <HeadItem>Lucro (saídas)</HeadItem>
             </Head>
 
-            {products.map((product, key) => (
-                <ProductItem key={key} item={product} />
+            {movements.map((movement, key) => (
+                <MovementItem key={key} item={movement} />
             ))}
 
             <Modal
@@ -44,7 +46,7 @@ const ProductList = ({ products }: ProductListProps) => {
                 cancelText="Cancelar"
                 onCancel={() => setModalVisible(false)}
             >
-                <InputContainer>
+                {/* <InputContainer>
                     <InputLabel>
                         <span>Descrição</span>
                         <Input placeholder="Celular" value={product.description} onChange={e => setProduct({ ...product, description: e.target.value })} />
@@ -69,14 +71,14 @@ const ProductList = ({ products }: ProductListProps) => {
                         <span>Quantidade em Estoque</span>
                         <Input placeholder="50" value={product.stock_quantity} type="number" onChange={e => setProduct({ ...product, stock_quantity: Number(e.target.value) })} />
                     </InputLabel>
-                </InputContainer>
+                </InputContainer> */}
             </Modal>
 
             <AddProductButton onClick={() => setModalVisible(true)}>
-                Adicionar Produto
+                Adicionar Movimentação
             </AddProductButton>
         </Container>
     )
 };
 
-export default ProductList;
+export default MovementList;

@@ -1,7 +1,10 @@
+import { Product } from "./Product";
+
 export type MovementType = 'in' | 'out';
 
 export interface Movement {
-    product: string;
+    id: number;
+    product: Product;
     type: MovementType;
     sale_value: number;
     sale_date: string;

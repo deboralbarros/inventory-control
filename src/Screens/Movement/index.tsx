@@ -1,6 +1,29 @@
+import { useState, useEffect } from 'react';
+import Header from "../../Components/Header";
+import MovementList from '../../Components/MovementList';
+import { Container } from "./styles";
+import { Movement as MovementModel } from '../../Models/Movement';
+import { getMovements } from '../../Services/Movements';
+
 const Movement = () => {
+    const [movements, setMovements] = useState<MovementModel[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const data = await getMovements();
+            console.log(data)
+
+            setMovements(data);
+        })();
+    }, []);
+
     return (
-        <div></div>
+        <>
+            <Header />
+            <Container>
+                <MovementList movements={movements} />
+            </Container>
+        </>
     )
 };
 
