@@ -33,5 +33,7 @@ export const MenuItem = styled(Link)`
 export const Title = styled.p`
     color: #fff;
     font-size: 2rem;
+    align-self: center;
     font-weight: 600;
+    margin: 0;
 `;
