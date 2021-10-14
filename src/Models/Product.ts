@@ -1,4 +1,4 @@
-export type ProductType = 'mobile' | 'eletronic' | 'home_appliances';
+export type ProductType = 'mobile' | 'eletronic' | 'home_appliances' | string;
 
 export interface Product {
     code?: string;

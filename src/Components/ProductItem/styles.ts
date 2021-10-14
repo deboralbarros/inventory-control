@@ -24,10 +24,51 @@ export const Text = styled.p`
     margin: 0;
     `;
 
-export const ActionButton = styled.p`
+export const ActionButton = styled.button`
     width: 250px;
+    border: none;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
+`;
+
+export const InputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InputLabel = styled.label`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.1rem;
+    margin: 5px 0;
+
+    span {
+        align-self: flex-start;
+    }
+
+    select {
+        padding: 8px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 1rem;
+        background: #fff;
+    }
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
 `;
