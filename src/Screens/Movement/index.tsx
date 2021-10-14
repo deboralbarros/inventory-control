@@ -11,7 +11,6 @@ const Movement = () => {
     useEffect(() => {
         (async () => {
             const data = await getMovements();
-            console.log(data)
 
             setMovements(data);
         })();
