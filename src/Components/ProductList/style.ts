@@ -37,3 +37,60 @@ export const HeadItem = styled.p`
     text-align: center;
     margin: 0;
 `;
+
+export const InputContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InputLabel = styled.label`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.1rem;
+    margin: 5px 0;
+
+    span {
+        align-self: flex-start;
+    }
+
+    select {
+        padding: 8px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 1rem;
+        background: #fff;
+    }
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+`;
+
+export const AddProductButton = styled.button`
+    margin: 10px;
+    width: 150px;
+    padding: 8px;
+    border: none;
+    background: #008cff;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    :hover {
+        background: #114df2;
+    }
+`;
